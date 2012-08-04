@@ -1,0 +1,1 @@
+This is repository containing sources for java serialization tests

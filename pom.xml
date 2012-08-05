@@ -49,16 +49,18 @@
       <version>0.5-rc1</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>com.googlecode</groupId>
       <artifactId>kryo</artifactId>
       <version>1.04</version>
     </dependency>
+-->
 
-<!--    <dependency>
+    <dependency>
       <groupId>com.esotericsoftware.kryo</groupId>
       <artifactId>kryo</artifactId>
       <version>2.19</version>
-    </dependency>-->
+    </dependency>
   </dependencies>
 </project>

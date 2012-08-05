@@ -66,10 +66,10 @@ public class ObjectWriterBenchmark extends SimpleBenchmark {
       }
     },
 
-    KRYO {
+    KRYO2 {
       @Override
       SerializationTest create() {
-        return ObjectWriteTest.buildKryoSerialization();
+        return ObjectWriteTest.buildKryo2Serialization();
       }
     },
 

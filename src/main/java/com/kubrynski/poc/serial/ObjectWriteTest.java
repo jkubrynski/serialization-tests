@@ -1,9 +1,10 @@
 package com.kubrynski.poc.serial;
 
 import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryo.io.Input;
+import com.esotericsoftware.kryo.io.Output;
 
 import java.io.*;
-import java.nio.ByteBuffer;
 
 /**
  * @author Jakub Kubrynski <jkubrynski@gmail.com>
@@ -16,8 +17,14 @@ public class ObjectWriteTest {
   public static final String FILE_MODE_RW = "rw";
   public static final String FILE_MODE_R = "r";
 
+/*
   public static SerializationTest buildKryoSerialization() {
     return new KryoSerialization();
+  }
+*/
+
+  public static SerializationTest buildKryo2Serialization() {
+    return new Kryo2Serialization();
   }
 
   public static SerializationTest buildDirectSerialization() {
@@ -122,6 +129,7 @@ public class ObjectWriteTest {
     }
   }
 
+/*
   private static class KryoSerialization implements SerializationTest {
 
     private static Kryo kryo = new Kryo();
@@ -150,6 +158,7 @@ public class ObjectWriteTest {
       try {
         raf = new RandomAccessFile(fileName, FILE_MODE_R);
         ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_BUFFER_SIZE);
+        raf.read(byteBuffer.array());
         return kryo.readObject(byteBuffer, TestObject.class);
       } finally {
         if (raf != null) {
@@ -158,8 +167,8 @@ public class ObjectWriteTest {
       }
     }
   }
+*/
 
-/*
   private static class Kryo2Serialization implements SerializationTest {
 
     private static Kryo kryo = new Kryo();
@@ -191,7 +200,6 @@ public class ObjectWriteTest {
 
     }
   }
-*/
 
 
 }
